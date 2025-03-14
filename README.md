@@ -31,15 +31,15 @@ print(stopwords_list)  # Output: A set of refined stopwords
 ### Example: Removing Stopwords from Text
 
 ```python
-import nltk
-nltk.download('punkt')  # Ensure tokenization is available
-from nltk.tokenize import word_tokenize
+from revised_stopwords import get_revised_stopwords
 
-text = "I don't think this is a very good idea, but it's not the worst."
-tokens = word_tokenize(text)
+text = "I don't think this is a very good idea"
+tokens = text.lower().split()  # Basic word split
 
-filtered_tokens = [word for word in tokens if word.lower() not in get_revised_stopwords()]
-print(filtered_tokens)  # Output retains sentiment words!
+filtered_tokens = [word for word in tokens if word not in get_revised_stopwords()]
+
+print(filtered_tokens)
+# Output: ["don't", 'think', 'very', 'good', 'idea']
 ```
 ## Troubleshooting
 LookupError: Resource stopwords not found?

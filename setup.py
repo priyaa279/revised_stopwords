@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="revised-stopwords",
-    version="0.1.2",
+    version="0.1.4",
     packages=find_packages(),
     install_requires=["nltk"],
     author="Priyaa Gopal Shankar",
